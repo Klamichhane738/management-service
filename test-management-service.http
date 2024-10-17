@@ -1,2 +1,2 @@
 ### Get All Orders
-GET http://localhost:4000/api/orders
+GET managementapp-aja4hpczdkhjgtca.canadacentral-01.azurewebsites.net/api/orders
