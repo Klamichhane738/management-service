@@ -9,7 +9,15 @@ The system follows a microservices architecture, consisting of:
 - **RabbitMQ** for message brokering
 
 Our goal is to integrate the **management-service** into this architecture, enabling efficient order retrieval for internal use in the **store-admin** app.
+## Overview
 
+The **Management Service** is designed to handle order management for the Algonquin Pet Store. It retrieves orders from a RabbitMQ queue and provides an API endpoint for fetching the list of orders.
+
+## Features
+
+- **Fetch Orders**: Provides an API to fetch orders from the RabbitMQ queue.
+- **RabbitMQ Integration**: Integrates with RabbitMQ to retrieve messages from the `orders` queue.
+- **Express Server**: Hosts the service using Express.js.
 
 
 Before integrating Management-service, we need to run RabbitMQ either locally or on Azure VM.
@@ -123,17 +131,8 @@ To run RabbitMQ on an Azure VM, follow these additional steps after creating a L
 
    After enabling the required ports, you can access the RabbitMQ Management Console by navigating to `http://<your-vm-ip>:15672`. Log in using the default credentials (`guest/guest`) or the new user you created.
 
-# Management Service
+# Management Service complete setup instructions
 
-## Overview
-
-The **Management Service** is designed to handle order management for the Algonquin Pet Store. It retrieves orders from a RabbitMQ queue and provides an API endpoint for fetching the list of orders.
-
-## Features
-
-- **Fetch Orders**: Provides an API to fetch orders from the RabbitMQ queue.
-- **RabbitMQ Integration**: Integrates with RabbitMQ to retrieve messages from the `orders` queue.
-- **Express Server**: Hosts the service using Express.js.
 
 ## Setup Instructions
 
