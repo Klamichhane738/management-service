@@ -11,93 +11,8 @@ The system follows a microservices architecture, consisting of:
 Our goal is to integrate the **management-service** into this architecture, enabling efficient order retrieval for internal use in the **store-admin** app.
 
 
-# Management Service
 
-## Overview
-
-The **Management Service** is designed to handle order management for the Algonquin Pet Store. It retrieves orders from a RabbitMQ queue and provides an API endpoint for fetching the list of orders.
-
-## Features
-
-- **Fetch Orders**: Provides an API to fetch orders from the RabbitMQ queue.
-- **RabbitMQ Integration**: Integrates with RabbitMQ to retrieve messages from the `orders` queue.
-- **Express Server**: Hosts the service using Express.js.
-
-## Setup Instructions
-
-Follow these steps to get the service up and running:
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Klamichhane738/management-service.git
-cd management-service
-```
-
-### 2. Install Dependencies
-
-Ensure that you have [Node.js](https://nodejs.org/) installed on your machine, then run:
-
-```bash
-npm install
-```
-
-### 3. Configure Environment Variables
-
-Create a `.env` file in the root of the project with the following content:
-
-```
-PORT=4000
-RABBITMQ_URL=amqp://localhost
-RABBITMQ_QUEUE=orders
-```
-
-### 4. Run the Service
-
-To start the service, run:
-
-```bash
-npm start
-```
-
-The service will start and listen on the specified port (default: 4000).
-
-### 5. Testing API Endpoints
-
-You can test the API endpoints using REST client extension for VS code using the provided `.http` file (`test-management-service.http`).
-
----
-
-## API Endpoints
-
-### **GET** `/api/orders`
-
-Fetches all orders from the RabbitMQ queue.
-
-#### Sample Response:
-
-```json
-[
-    {
-        "id": 1,
-        "name": "Dog Food",
-        "price": 19.99
-    },
-    {
-        "id": 2,
-        "name": "Cat Food",
-        "price": 34.99
-    },
-    {
-        "id": 3,
-        "name": "Bird Seeds",
-        "price": 10.99
-    }
-]
-```
-
----
-
+Before integrating Management-service, we need to run RabbitMQ either locally or on Azure VM.
 ## RabbitMQ Setup (Local and Azure VM)
 
 ### Running RabbitMQ Locally
@@ -207,6 +122,94 @@ To run RabbitMQ on an Azure VM, follow these additional steps after creating a L
 6. **Access the Management Console**
 
    After enabling the required ports, you can access the RabbitMQ Management Console by navigating to `http://<your-vm-ip>:15672`. Log in using the default credentials (`guest/guest`) or the new user you created.
+
+# Management Service
+
+## Overview
+
+The **Management Service** is designed to handle order management for the Algonquin Pet Store. It retrieves orders from a RabbitMQ queue and provides an API endpoint for fetching the list of orders.
+
+## Features
+
+- **Fetch Orders**: Provides an API to fetch orders from the RabbitMQ queue.
+- **RabbitMQ Integration**: Integrates with RabbitMQ to retrieve messages from the `orders` queue.
+- **Express Server**: Hosts the service using Express.js.
+
+## Setup Instructions
+
+Follow these steps to get the service up and running:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Klamichhane738/management-service.git
+cd management-service
+```
+
+### 2. Install Dependencies
+
+Ensure that you have [Node.js](https://nodejs.org/) installed on your machine, then run:
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the root of the project with the following content:
+
+```
+PORT=4000
+RABBITMQ_URL=amqp://localhost
+RABBITMQ_QUEUE=orders
+```
+
+### 4. Run the Service
+
+To start the service, run:
+
+```bash
+npm start
+```
+
+The service will start and listen on the specified port (default: 4000).
+
+### 5. Testing API Endpoints
+
+You can test the API endpoints using REST client extension for VS code using the provided `.http` file (`test-management-service.http`).
+
+---
+
+## API Endpoints
+
+### **GET** `/api/orders`
+
+Fetches all orders from the RabbitMQ queue.
+
+#### Sample Response:
+
+```json
+[
+    {
+        "id": 1,
+        "name": "Dog Food",
+        "price": 19.99
+    },
+    {
+        "id": 2,
+        "name": "Cat Food",
+        "price": 34.99
+    },
+    {
+        "id": 3,
+        "name": "Bird Seeds",
+        "price": 10.99
+    }
+]
+```
+
+---
+
 
 ---
 
