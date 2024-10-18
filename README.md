@@ -225,6 +225,9 @@ Ensure you have an Azure account and the [Azure CLI](https://docs.microsoft.com/
 ```bash
 az webapp up --name <your-app-name> --resource-group <your-resource-group>
 ```
+Once it is launched on Azure web app, it should show screen like shown below:
+
+![Screenshot (1641)](https://github.com/user-attachments/assets/9fd463ac-7f9f-405d-b169-f12f5fa24af2)
 
 ### 2. Ensure RabbitMQ Availability
 
