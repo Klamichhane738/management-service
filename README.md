@@ -234,10 +234,33 @@ Once it is launched on Azure web app, it should show screen like shown below:
 For the service to function properly, RabbitMQ should be available with the appropriate settings in Azure. You can deploy RabbitMQ in Azure using a [RabbitMQ Docker image](https://hub.docker.com/_/rabbitmq) or as a [managed service](https://www.cloudamqp.com/).
 
 ---
+### Visual representation of steps:
+**Assuming that RabbitMQ server is running, we will be running order service to fetch data to RabbitMQ and using REST Client we can test the order-service page to give output as below**
+
+![Running order service](https://github.com/user-attachments/assets/4fe44759-f1dd-4b69-9594-fc29a36d01ec)
+
+**Once the order service sends the order to rabbitMQ, we can now run product-service:**
+
+![Running product service](https://github.com/user-attachments/assets/9d43de08-e399-468b-bc36-824574a1a676)
+
+**Now we will be running store-front to send request to RabbitMQ.**
+
+![Order from store front](https://github.com/user-attachments/assets/23b56a6d-69c5-43df-9875-ba0f01bddb5b)
+
+**Next step is to see the queue in RabbitMQ if those orders have been received or not.**
+
+![Order in RAbbitmq](https://github.com/user-attachments/assets/e360d8a2-338e-435f-9dda-2623def6351c)
+
+**Finally, now its time to run management-service to receive orders from RabbitMQ queue. This was the requirement of this assignment. And we can test the management service output by running .http file**
+
+![Running management-service](https://github.com/user-attachments/assets/ef1558bc-952c-426e-9ca2-04c604b09f12)
+
 
 ## Additional Notes
 
 - This service follows the 12-Factor principles for cloud-native application development.
 - The provided `.http` file (`test-management-service.http`) can be used for quick API testing.
 - Ensure proper security configurations when deploying to production environments, such as securing RabbitMQ connections and using environment variables for sensitive data.
+
+### Submitted by Keshav Lamichhane
 
