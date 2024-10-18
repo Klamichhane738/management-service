@@ -21,6 +21,15 @@ The **Management Service** is designed to handle order management for the Algonq
 - **RabbitMQ Integration**: Integrates with RabbitMQ to retrieve messages from the `orders` queue.
 - **Express Server**: Hosts the service using Express.js.
 
+## Compliance with first four factors of 12-Factor principles:
+Management-service comply with the first four factors of the 12-Factor App: Codebase, Dependencies, Configuration, and Backing Services.
+
+First four 12-Factor concepts were followed by us by:
+
+- Codebase: Enabling uniform deployment throughout environments by managing the management service within a single Git repository.
+- Requirements: Using npm install to install all necessary packages, make sure that all service dependencies are explicitly listed in package.json.
+- Configuration: Externalize configurations for flexibility between development and production by storing environment-specific parameters, such as RABBITMQ_URL and PORT, in a.env file.
+- Backing Services: This type of support treats RabbitMQ as an external resource, allowing for simple switching between local and cloud-hosted instances by defining its connection details using environment variables.
 
 Before integrating Management-service, we need to run RabbitMQ either locally or on Azure VM.
 ## RabbitMQ Setup (Local and Azure VM)
