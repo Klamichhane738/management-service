@@ -8,6 +8,8 @@ The system follows a microservices architecture, consisting of:
 - **product-service** (Rust/Python) for product details
 - **RabbitMQ** for message brokering
 
+![app-architecture](https://github.com/user-attachments/assets/6b70003c-a35a-46d6-9352-21c447f000e4)
+
 Our goal is to integrate the **management-service** into this architecture, enabling efficient order retrieval for internal use in the **store-admin** app.
 ## Overview
 
