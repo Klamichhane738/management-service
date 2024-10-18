@@ -24,7 +24,7 @@ The **Management Service** is designed to handle order management for the Algonq
 ## Compliance with first four factors of 12-Factor principles:
 Management-service comply with the first four factors of the 12-Factor App: Codebase, Dependencies, Configuration, and Backing Services.
 
-First four 12-Factor concepts were followed by us by:
+First four 12-Factor concepts were followed in following way:
 
 - Codebase: Enabling uniform deployment throughout environments by managing the management service within a single Git repository.
 - Requirements: Using npm install to install all necessary packages, make sure that all service dependencies are explicitly listed in package.json.
